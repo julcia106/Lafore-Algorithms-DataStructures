@@ -55,5 +55,22 @@ namespace _1
                 Console.Write(a[j] + " "); //display it
             Console.WriteLine(" ");
         }
+
+        public long getMax()
+        {
+            if (nElems == 0)
+                return -1;
+            else
+            {
+                long max = a[0];
+                for (int j = 0; j < nElems; j++)
+                {
+                    if (max < a[j])
+                        max = a[j];
+                }
+
+                return max;
+            }
+        }
     }
 }

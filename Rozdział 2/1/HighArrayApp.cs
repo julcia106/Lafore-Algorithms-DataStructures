@@ -19,11 +19,14 @@ namespace _1
             arr.insert(54);
             arr.insert(3);
             arr.insert(23);
-            arr.insert(76);
+            arr.insert(79);
             arr.insert(65);
             arr.insert(7);
 
             arr.display();
+
+
+            Console.WriteLine("The value of the highest key in the array: " + arr.getMax());
 
             int searchKey = 35; //search for item
             if (arr.find(searchKey))
