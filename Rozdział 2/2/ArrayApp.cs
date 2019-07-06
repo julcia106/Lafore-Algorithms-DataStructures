@@ -1,21 +1,20 @@
-﻿//To the HighArray class in the highArray.java program (Listing 2.3), add a
-//method called getMax() that returns the value of the highest key in the array,
-//or –1 if the array is empty.Add some code in main() to exercise this method.
-//You can assume all the keys are positive numbers.
+﻿//Modify the method in Programming Project 2.3 so that the item with the
+//highest key is not only returned by the method, but also removed from the array.
+//Call the method removeMax().
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _1
+namespace _2
 {
-    class HighArrayApp
+    class ArrayApp
     {
-        static void Main(string []args)
+        static void Main(string[] args)
         {
             int maxSize = 100; //array size
-            HighArray arr;     //reference to array
-            arr = new HighArray(maxSize); //create the array
+            Array arr;     //reference to array
+            arr = new Array(maxSize); //create the array
 
             arr.insert(77);
             arr.insert(22);
@@ -31,7 +30,9 @@ namespace _1
             arr.display();
 
 
-            Console.WriteLine("The value of the highest key in the array: " + arr.getMax());
+            Console.WriteLine("The value of the highest key in the array: " + arr.removeMax());
+            Console.Write("Removing the highest value: ");
+            arr.display();
 
             int searchKey = 35; //search for item
             if (arr.find(searchKey))
