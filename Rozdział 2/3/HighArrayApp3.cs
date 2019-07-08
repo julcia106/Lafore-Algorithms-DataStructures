@@ -3,6 +3,14 @@
 //not require modifying the HighArray class, but only the code in main(). You’ll
 //need a second array, which will end up inversely sorted. (This scheme is 
 //rather crude variant of the selection sort in Chapter 3, “Simple Sorting.”)
+ 
+//2.6 Write a noDups() method for the HighArray class of the highArray.java
+//program (Listing 2.3). This method should remove all duplicates from the
+//array.That is, if three items with the key 17 appear in the array, noDups()
+//should remove two of them.Don’t worry about maintaining the order of the
+//items.One approach is to first compare every item with all the other items and
+//overwrite any duplicates with a null (or a distinctive value that isn’t used for
+//real keys). Then remove all the nulls.Of course, the array size will be reduced.
 
 using System;
 using System.Collections.Generic;
@@ -20,7 +28,7 @@ namespace _2
 
             arr.insert(77);
             arr.insert(22);
-            arr.insert(55);
+            arr.insert(77);
             arr.insert(1);
             arr.insert(54);
             arr.insert(3);
@@ -31,6 +39,9 @@ namespace _2
 
             arr.display();
 
+            arr.noDups();
+
+            arr.display();
 
             Console.WriteLine("The value of the highest key in the array: " + arr.removeMax());
             Console.Write("Removing the highest value: ");

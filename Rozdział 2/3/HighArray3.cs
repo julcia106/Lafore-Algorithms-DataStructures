@@ -91,5 +91,24 @@ namespace _2
             }
         }
 
+        public void noDups()
+        {
+            int i=0;
+            int j;
+
+            for (i = 0; i < nElems; i++)
+            {
+                for (j=1; j<nElems; j++)
+                {
+                    if (a[j] == a[i])
+                        a[j] = -1;
+                    j++;
+                }
+
+            i++;
+        }
+    }
+
+
     }
 }

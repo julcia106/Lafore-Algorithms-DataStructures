@@ -89,5 +89,63 @@ namespace _3
                 Console.Write(a[j] + " ");  // display it
             Console.WriteLine("");
         }
+
+        public void setVal(int index, long value)
+        {
+            a[index] = value;
+        }
+
+        public long getVal(int index) => a[index];
+
+        public static OrdArray merge(OrdArray arr1, OrdArray arr2)
+        {
+            int size = arr1.size() + arr2.size();
+            OrdArray arr = new OrdArray(size);
+
+            int i = 0;
+            int j = 0;
+            int k = 0;
+            while(j< arr1.size() && k< arr2.size())
+            {
+                if(arr1.getVal(j)< arr2.getVal(k))
+                {
+                    arr.setVal(i, arr1.getVal(j));
+                    j++;
+                }
+                else if(arr1.getVal(j)>arr2.getVal(k))
+                {
+                    arr.setVal(i, arr2.getVal(k));
+                    k++;
+                }
+                else
+                {
+                    arr.setVal(i, arr1.getVal(j));
+                    arr.setVal(i, arr2.getVal(k));
+                    j++;
+                    k++;
+                }
+                arr.nElems++;
+                i++;
+            }
+            //ostatni warunek jeżeli któraś tablica jest dłuższa 
+            
+            while(j<arr1.size())
+            {
+                arr.setVal(i, arr1.getVal(j));
+                j++;
+                i++;
+                arr.nElems++;
+            }
+
+            while(k<arr2.size())
+            {
+                arr.setVal(i, arr2.getVal(k));
+                k++;
+                i++;
+                arr.nElems++;
+            }
+
+            return arr;
+        }
     }  
 }
