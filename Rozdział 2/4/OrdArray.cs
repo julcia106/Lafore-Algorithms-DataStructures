@@ -12,8 +12,7 @@ namespace _3
             nElems = 0;
         }
 
-        public int size()
-        { return nElems; }
+        public int size() => nElems;
 
         public int find(long searchKey)
         {
@@ -63,7 +62,9 @@ namespace _3
                     i++;
                 }
                 for (int k = nElems; k > i; k--)
+                {
                     a[k] = a[k - 1];
+                }
             }
             a[i] = value;
             nElems++;

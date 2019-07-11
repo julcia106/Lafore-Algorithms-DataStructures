@@ -93,21 +93,30 @@ namespace _2
 
         public void noDups()
         {
-            int i=0;
-            int j;
+            long value;
+            int size = nElems - 1;
+            int i, j, k;
 
-            for (i = 0; i < nElems; i++)
+            for (i = 0; i <= size; i++)
             {
-                for (j=1; j<nElems; j++)
-                {
-                    if (a[j] == a[i])
-                        a[j] = -1;
-                    j++;
-                }
+                value = a[i];
 
-            i++;
+                for (j=i+1; j<=size; j++)
+                {
+                    if (a[j] == value)
+                    {
+                        for(k=j; k<size; k++)
+                        {
+                            a[k] = a[k + 1];
+                        }
+                        nElems--;
+                        j--;
+                        size--;
+
+                    }
+                }
+            }
         }
-    }
 
 
     }

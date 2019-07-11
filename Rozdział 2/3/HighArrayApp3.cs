@@ -27,11 +27,11 @@ namespace _2
             arr = new Array(maxSize); //create the array
 
             arr.insert(77);
-            arr.insert(22);
             arr.insert(77);
-            arr.insert(1);
+            arr.insert(27);
+            arr.insert(37);
             arr.insert(54);
-            arr.insert(3);
+            arr.insert(7);
             arr.insert(23);
             arr.insert(79);
             arr.insert(65);
@@ -41,31 +41,32 @@ namespace _2
 
             arr.noDups();
 
+            Console.WriteLine("After noDups: ");
             arr.display();
 
-            Console.WriteLine("The value of the highest key in the array: " + arr.removeMax());
-            Console.Write("Removing the highest value: ");
-            arr.display();
+            //Console.WriteLine("The value of the highest key in the array: " + arr.removeMax());
+            //Console.Write("Removing the highest value: ");
+            //arr.display();
 
-            Array arr2 = new Array(maxSize);
-            while (arr.getMax() != -1)
-            {
-                arr2.insert(arr.removeMax()); //sort
-            }
-            arr2.display();
+            //Array arr2 = new Array(maxSize);
+            //while (arr.getMax() != -1)
+            //{
+            //    arr2.insert(arr.removeMax()); //sort
+            //}
+            //arr2.display();
 
-            int searchKey = 35; //search for item
-            if (arr.find(searchKey))
-                Console.WriteLine("Found " + searchKey);
-            else
-                Console.WriteLine("Can't find " + searchKey);
+            //int searchKey = 35; //search for item
+            //if (arr.find(searchKey))
+            //    Console.WriteLine("Found " + searchKey);
+            //else
+            //    Console.WriteLine("Can't find " + searchKey);
 
 
-            arr.delete(3);
-            arr.delete(23);
-            arr.delete(7);
+            //arr.delete(3);
+            //arr.delete(23);
+            //arr.delete(7);
 
-            arr.display();
+            //arr.display();
         }
     }
 }
