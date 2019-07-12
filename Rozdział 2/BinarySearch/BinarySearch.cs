@@ -56,7 +56,7 @@ namespace BinarySearch
             if (a[curIn] == searchKey)
                 return curIn;
 
-            else if (searchKey < a[curIn])   //jest w górnej połowie
+            else if (searchKey < a[curIn])
             {
                 return recursive_find(searchKey, left, curIn - 1);
             }

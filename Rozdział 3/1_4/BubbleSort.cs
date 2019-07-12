@@ -1,12 +1,20 @@
-﻿using System;
+﻿//3.1 In the bubbleSort.java program(Listing 3.1) and the BubbleSort Workshop
+//applet, the in index always goes from left to right, finding the largest item and
+//carrying it toward out on the right.Modify the bubbleSort() method so that it’s
+//bidirectional.This means the in index will first carry the largest item from left
+//to right as before, but when it reaches out, it will reverse and carry the smallest
+//item from right to left. You’ll need two outer indexes, one on the right (the old
+//out) and another on the left.
+
+using System;
 using System.Diagnostics;
 
-namespace _3
+namespace Bubble
 {
     class ArrayBub
     {
-        private long[] a;                 // ref to array a
-        private int nElems;               // number of data items
+        private long[] a;                 
+        private int nElems;               
 
         public ArrayBub(int max)
         {
@@ -14,10 +22,10 @@ namespace _3
             nElems = 0;
         }
 
-        public void insert(long value)    // put element into array
+        public void insert(long value)   
         {
-            a[nElems] = value;             // insert it
-            nElems++;                      // increment size
+            a[nElems] = value;            
+            nElems++;                     
         }
 
         public void display()
@@ -84,16 +92,18 @@ namespace _3
                 arr.insert(n);
             }
 
-            Console.WriteLine("Pierwsze display: ");
+            Console.WriteLine("First display: ");
             arr.display();                // display items
 
             arr.bubbleSort();             // bubble sort them
 
             sw.Start();
             Console.WriteLine();
-            Console.WriteLine("Display po bubble sorcie: ");
+            Console.WriteLine("Display after diBubbleSort: ");
             arr.display();                // display them again
             sw.Stop();
+
+            Console.WriteLine();
             Console.WriteLine("Elapsed={0} ", sw.Elapsed);
         }
     }
