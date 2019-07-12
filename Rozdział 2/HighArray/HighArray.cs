@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _2
+namespace _1
 {
     class Array
     {
@@ -63,7 +63,7 @@ namespace _2
             else
             {
                 long max = a[0];
-                for(int i=0; i<nElems; i++)
+                for (int i = 0; i < nElems; i++)
                 {
                     if (max < a[i])
                         max = a[i];
@@ -101,11 +101,11 @@ namespace _2
             {
                 value = a[i];
 
-                for (j=i+1; j<=size; j++)
+                for (j = i + 1; j <= size; j++)
                 {
                     if (a[j] == value)
                     {
-                        for(k=j; k<size; k++)
+                        for (k = j; k < size; k++)
                         {
                             a[k] = a[k + 1];
                         }

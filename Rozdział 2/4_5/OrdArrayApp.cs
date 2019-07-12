@@ -58,6 +58,6 @@ namespace _3
             arr1.delete(99);
 
             arr1.display();                 // display items again
-        } 
-    }  
+        }
+    }
 }

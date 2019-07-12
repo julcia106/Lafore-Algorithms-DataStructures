@@ -33,9 +33,9 @@ namespace _3
                         lowerBound = curIn + 1; // it's in upper half
                     else
                         upperBound = curIn - 1; // it's in lower half
-                } 
-            } 
-        }  
+                }
+            }
+        }
         public void insert(long value)    // put element into array
         {
 
@@ -43,12 +43,12 @@ namespace _3
             int lowerBound = 0;
             int upperBound = nElems - 1;
 
-            if(nElems!=0)
+            if (nElems != 0)
             {
-                while(lowerBound<=upperBound)
+                while (lowerBound <= upperBound)
                 {
                     i = (lowerBound + upperBound) / 2;
-                    if(a[i]<value)
+                    if (a[i] < value)
                     {
                         lowerBound = i + 1;
                     }
@@ -57,7 +57,7 @@ namespace _3
                         upperBound = i - 1;
                     }
                 }
-                if(i==nElems-1 && value>a[i])
+                if (i == nElems - 1 && value > a[i])
                 {
                     i++;
                 }
@@ -68,7 +68,7 @@ namespace _3
             }
             a[i] = value;
             nElems++;
-        }  
+        }
 
         public Boolean delete(long value)
         {
@@ -82,7 +82,7 @@ namespace _3
                 nElems--;                   // decrement size
                 return true;
             }
-        }  
+        }
 
         public void display()             // displays array contents
         {
@@ -106,14 +106,14 @@ namespace _3
             int i = 0;
             int j = 0;
             int k = 0;
-            while(j< arr1.size() && k< arr2.size())
+            while (j < arr1.size() && k < arr2.size())
             {
-                if(arr1.getVal(j)< arr2.getVal(k))
+                if (arr1.getVal(j) < arr2.getVal(k))
                 {
                     arr.setVal(i, arr1.getVal(j));
                     j++;
                 }
-                else if(arr1.getVal(j)>arr2.getVal(k))
+                else if (arr1.getVal(j) > arr2.getVal(k))
                 {
                     arr.setVal(i, arr2.getVal(k));
                     k++;
@@ -129,8 +129,8 @@ namespace _3
                 i++;
             }
             //ostatni warunek jeżeli któraś tablica jest dłuższa 
-            
-            while(j<arr1.size())
+
+            while (j < arr1.size())
             {
                 arr.setVal(i, arr1.getVal(j));
                 j++;
@@ -138,7 +138,7 @@ namespace _3
                 arr.nElems++;
             }
 
-            while(k<arr2.size())
+            while (k < arr2.size())
             {
                 arr.setVal(i, arr2.getVal(k));
                 k++;
@@ -148,5 +148,5 @@ namespace _3
 
             return arr;
         }
-    }  
+    }
 }
