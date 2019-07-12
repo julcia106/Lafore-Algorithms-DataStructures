@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace _3a
+namespace _3
 {
     class ArrayBub
     {
         private long[] a;                 // ref to array a
         private int nElems;               // number of data items
 
-        public ArrayBub(int max)        
+        public ArrayBub(int max)
         {
-            a = new long[max];                 
-            nElems = 0;                        
+            a = new long[max];
+            nElems = 0;
         }
 
         public void insert(long value)    // put element into array
@@ -20,10 +20,10 @@ namespace _3a
             nElems++;                      // increment size
         }
 
-        public void display()       
+        public void display()
         {
-            for (int j = 0; j < nElems; j++)       
-                Console.Write(a[j] + " ");  
+            for (int j = 0; j < nElems; j++)
+                Console.Write(a[j] + " ");
             Console.WriteLine("");
         }
 
@@ -34,7 +34,7 @@ namespace _3a
             int inn;
             int pt = 1;
 
-            while(outl!=outr)
+            while (outl != outr)
             {
                 if (pt == 1)
                 {
@@ -48,7 +48,7 @@ namespace _3a
                 }
                 else
                 {
-                    for(inn=outr; inn>outl; inn--)
+                    for (inn = outr; inn > outl; inn--)
                     {
                         if (a[inn] < a[inn - 1])
                             swap(inn, inn - 1);
@@ -78,7 +78,7 @@ namespace _3a
             arr = new ArrayBub(maxSize);  // create the array
             Stopwatch sw = new Stopwatch();
 
-            for(int j=0; j<maxSize; j++)
+            for (int j = 0; j < maxSize; j++)
             {
                 long n = (long)(rand.Next(100));
                 arr.insert(n);
@@ -95,7 +95,7 @@ namespace _3a
             arr.display();                // display them again
             sw.Stop();
             Console.WriteLine("Elapsed={0} ", sw.Elapsed);
-        }  
+        }
     }
 }
 
