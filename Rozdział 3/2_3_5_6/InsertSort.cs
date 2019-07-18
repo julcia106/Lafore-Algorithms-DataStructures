@@ -109,7 +109,7 @@ namespace InsSort
 
                 a[inn] = temp;
             }
-            if(dups!=0)
+            if (dups != 0)
             {
                 for (int i = dups; i < nElems; i++)
                     a[i - dups] = a[i];
@@ -167,7 +167,7 @@ namespace InsSort
             arr.insert(7);               
             arr.insert(65);               
             arr.insert(5);               
-            arr.insert(65);               
+            arr.insert(3);               
 
             arr.display();                
 

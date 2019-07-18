@@ -61,7 +61,7 @@ namespace BinarySearch
                 return recursive_find(searchKey, left, curIn - 1);
             }
             else
-                return recursive_find(searchKey, curIn - 1, right);
+                return recursive_find(searchKey, curIn + 1, right);
         }
 
         public void insert(long value)
