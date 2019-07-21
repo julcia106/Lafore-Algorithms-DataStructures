@@ -3,6 +3,11 @@
 //removeRight(), isEmpty(), and isFull() methods. It will need to support wraparound
 //at the end of the array, as queues do.
 
+//4.3 Write a program that implements a stack class that is based on the Deque class
+//in Programming Project 4.2. This stack class should have the same methods
+//and capabilities as the StackX class in the stack.java program (Listing 4.1).
+
+
 using System;
 
 namespace Dequeue
@@ -113,6 +118,46 @@ namespace Dequeue
             }
             Console.WriteLine();
         }
+
+        public long peek()
+        {
+            return dequeArray[right];
+        }
+    }
+    //exercise 4.3
+    class Stack
+    {
+        private Queue StackDeq;
+
+        public Stack(int size)
+        {
+            StackDeq = new Queue(size);
+        }
+
+        public void push(long value)
+        {
+            StackDeq.insertRight(value);
+        }
+
+        public void pop()
+        {
+            StackDeq.removeRight();
+        }
+
+        public long peek()
+        {
+            return StackDeq.peek();
+        }
+
+        public Boolean isEmpty()
+        {
+            return StackDeq.isEmpty();
+        }
+
+        public Boolean isFull()
+        {
+            return StackDeq.isFull();
+        }
     }
 
     class DequeueApp
@@ -143,6 +188,17 @@ namespace Dequeue
             Console.WriteLine("Remove right: ");
             one.removeRight();
             one.display();
+
+            //exercise 4.3
+            Stack stack1 = new Stack(5);
+            stack1.push(1);
+            stack1.push(2);
+            stack1.push(3);
+            stack1.push(4);
+            stack1.push(5);
+            Console.WriteLine("The top value of Stack: " + stack1.peek());
+            stack1.pop();
+            Console.WriteLine("The top value of Stack: " + stack1.peek());
 
         }
     }
