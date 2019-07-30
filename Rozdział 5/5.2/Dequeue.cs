@@ -1,4 +1,7 @@
-﻿using System;
+﻿//5.2 Implement a deque based on a doubly linked list.The user should be able to carry out the normal
+//operations on the deque.
+
+using System;
 
 namespace Queue
 {
