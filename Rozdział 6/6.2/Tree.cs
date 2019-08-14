@@ -21,7 +21,6 @@ namespace Task
         }
         public static void MakeBranches(int left, int right, int width) //recursive method
         {
-            Console.WriteLine(left);
             if (left - right == 0)
                 return;
           
