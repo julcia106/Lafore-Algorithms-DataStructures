@@ -3,40 +3,31 @@
 namespace _6._5
 {
     class Combinations
-    {
-        public static string[] array;
+    { 
         static void Main(string[] args)
         {
-            array = new string[] { "A", "B", "C", "D", "E" };
-
-            Console.Write("Array: ");
-            for (int i = 0; i < array.Length; i++)
+            String str = "";
+            int teamSize = 5;
+            int groupSize = 3;
+            showTeams(teamSize, groupSize, str, 'A', groupSize - 1);
+        }
+        public static void showTeams(int n, int k, String str, char ch, int size)
+        {
+            if (n== 0 || k== 0 || k > n) 
             {
-                Console.Write(array[i] + "");
+                return;
             }
 
-            Console.WriteLine();
+            str += Convert.ToString(ch);
+            ch++;
 
-            Console.Write("Enter the size of group: ");
-            int size = Convert.ToInt32(Console.ReadLine());
+            showTeams(n - 1, k - 1, str, ch, size);
+            str = str.Substring(0, str.Length - 1);
 
-            Console.Write("Enter the number of elements in group: ");
-            int numberOfElems = Convert.ToInt32(Console.ReadLine());
+            if (str.Length == size)
+                Console.WriteLine(str + (char)(ch - 1));
 
-            showTeams(size, numberOfElems);
-        }
-        public static void showTeams(int n, int k)
-        {
-            for (int i = 0; i < n; i++) 
-            {
-                string A = array[i];
-
-                for (int j = 1; j < n; j++) 
-                {
-                    Console.WriteLine(A + array[j]);
-                }
-
-;           }
+            showTeams(n - 1, k, str, ch, size);
         }
     }
 }
