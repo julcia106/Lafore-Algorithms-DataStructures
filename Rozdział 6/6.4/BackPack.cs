@@ -17,6 +17,7 @@ namespace _6._4
 
             Console.WriteLine();
             Console.WriteLine("Our seeking value: 20");
+
             if (!Knapsack(20, 0))
                 Console.WriteLine("Cant find any combination.");
         }
@@ -48,7 +49,7 @@ namespace _6._4
             }
             else // the number is too big
             {
-                isTrue= Knapsack(targetWeight, index + 1);
+                isTrue = Knapsack(targetWeight, index + 1);
             }
             return isTrue;
         }
